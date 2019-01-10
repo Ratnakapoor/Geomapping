@@ -1,11 +1,10 @@
-// store the query URL for the geojson - earthquakes in the past month
+// URL for the geojson - earthquakes in the past month
 var earthquakeURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
 
 //create function to determine marker size based on earthquake mag
 function markerSize(mag) {
-    // need to make circles visible. updated the number until 15,000 worked.
-    return mag * 15000;
+        return mag * 15000;
 }
 
 // function to color the markers based on magnitude
@@ -20,7 +19,7 @@ function colorCircle(mag) {
         return "Yellow";
     }
     else if (mag >=3 && mag < 4) {
-        return "orange";
+        return "blue";
     }
     else if (mag >=4 && mag <5) {
         return "DarkOrange";
@@ -30,7 +29,7 @@ function colorCircle(mag) {
     }
 }
 
-// use a GET request on the earthquake URL to get data...
+//  get data...
 d3.json(earthquakeURL, function(data) {
 
     // first step - run through every feature and create popup.
